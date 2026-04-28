@@ -3,7 +3,10 @@ import requests
 from typing import Optional
 from dotenv import load_dotenv
 load_dotenv()
-OPENAI_API_KEY=os.getenv("OPENAI_API_KEY")
+
+# Use variável de ambiente para a chave da API
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
 OPENAI_URL = "https://api.openai.com/v1/chat/completions"
 MODEL = "gpt-3.5-turbo"
 
@@ -29,4 +32,5 @@ class OpenAIClient:
         print("OpenAI API response status:", response)
         response.raise_for_status()
         data = response.json()
+        print("AAAAAAAAAAAAAAAAAAAAAA", data)
         return data["choices"][0]["message"]["content"]

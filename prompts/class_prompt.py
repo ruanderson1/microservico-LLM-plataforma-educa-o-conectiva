@@ -5,7 +5,7 @@ def build_class_prompt(request: ClassReportRequest) -> str:
 Você é um assistente educacional. Gere um relatório ESTRUTURADO em JSON (apenas JSON, sem explicações) com o seguinte formato:
 
 {{
-  "class_id": int,
+    "class_id": string,
   "periodo_referencia": string,
   "desempenho_medio_turma": "baixo|medio|alto",
   "principais_dificuldades_turma": string,

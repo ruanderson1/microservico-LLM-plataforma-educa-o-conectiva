@@ -1,21 +1,21 @@
-from pydantic import BaseModel, Field
-from typing import List
+from pydantic import BaseModel
+from typing import List, Union
 
 class StudentSummary(BaseModel):
-    student_id: int
+    student_id: Union[str, int]
     desempenho_geral: str
     engajamento: str
     risco_desengajamento: str
     dificuldades_aprendizagem: str
 
 class ClassReportRequest(BaseModel):
-    class_id: int
+    class_id: Union[str, int]
     periodo_referencia: str
     observacao_professor_turma: str
     students: List[StudentSummary]
 
 class ClassReportResponse(BaseModel):
-    class_id: int
+    class_id: Union[str, int]
     periodo_referencia: str
     desempenho_medio_turma: str
     principais_dificuldades_turma: str
